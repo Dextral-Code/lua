@@ -1,17 +1,18 @@
 getgenv().Setting = {
     ["Team"] = "Pirates",
-    ["Chat"] = {"Auto Bounty From Rimus Hub"},
+    ["Chat"] = {},
     ["Skip Race V4"] = true,
     ["Misc"] = {
-        ["Lock Bounty"] = {-300000000000, 30000000000},
-        ["Hide Health"] = {4000,5000},
-        ["Lock Camera"] = true,
+        ["Enable Lock Bounty"] = false,
+        ["Lock Bounty Number"] = {0, 300000000},
+        ["Hide Health"] = {4500,5000},
+        ["Lock Camera"] = false,
         ["Enable Cam Farm"] = false,
         ["White Screen"] = false, 
         ["FPS Boost"] = false,
         ["White Screen"] = false,
         ["Bypass TP"] = true, 
-        ["Spam All Skill On V4"] = true, 
+        ["Spam All Skill On V4"] = true,
         ["Random & Store Fruit"] = true
     },
     ["Item"] = {
@@ -29,7 +30,7 @@ getgenv().Setting = {
         },
         ["Sword"] = {["Enable"] = true,
             ["Z"] = {["Enable"] = true, ["Hold Time"] = 1},
-            ["X"] = {["Enable"] = true, ["Hold Time"] = 0}
+            ["X"] = {["Enable"] = true, ["Hold Time"] = 0.1}
         },
         ["Gun"] = {["Enable"] = true,
             ["Z"] = {["Enable"] = true, ["Hold Time"] = 0.1},
