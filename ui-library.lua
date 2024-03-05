@@ -1,3 +1,4 @@
+--// Bug?, Report at https://discord.gg/FZzxtjgjte
 local UserInputService = game:GetService("UserInputService")
 local TweenService = game:GetService("TweenService")
 local RunService = game:GetService("RunService")
