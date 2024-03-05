@@ -1,3 +1,4 @@
+--// Bug?, Report at https://discord.gg/FZzxtjgjte
 local RimusLib = loadstring(game:HttpGet("https://raw.githubusercontent.com/Dextral-Code/lua/main/ui-library.lua"))()
 local RimusHub = RimusLib:MakeGui({
   	NameHub = "Rimus Hub",
