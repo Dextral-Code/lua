@@ -1464,7 +1464,7 @@ function RimusLib:MakeGui(GuiConfig)
 			Input.BackgroundColor3 = Color3.fromRGB(20.000000707805157, 20.000000707805157, 20.000000707805157)
 			Input.BorderColor3 = Color3.fromRGB(0, 0, 0)
 			Input.BorderSizePixel = 0
-			Input.LayoutOrder = 1
+			Input.LayoutOrder = CountItem
 			Input.Size = UDim2.new(1, 0, 0, 55)
 			Input.Name = "Input"
 			Input.Parent = LayersScroll
