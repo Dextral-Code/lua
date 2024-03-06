@@ -1,4 +1,3 @@
---// Bug?, Report at https://discord.gg/FZzxtjgjte
 local UserInputService = game:GetService("UserInputService")
 local TweenService = game:GetService("TweenService")
 local RunService = game:GetService("RunService")
@@ -403,14 +402,12 @@ function RimusLib:MakeGui(GuiConfig)
 
 	local Open = true
 	ToggleButton.MouseButton1Down:Connect(function()
-		if CoreGui.ScreenGui:FindFirstChild("ShadowHolder1") then
-			if Open == false then
-				Open = true
-				CoreGui.ScreenGui.ShadowHolder1.Visible = true
-			else
-				Open = false
-				CoreGui.ScreenGui.ShadowHolder1.Visible = false
-			end
+		if Open == false then
+			Open = true
+			ShadowHolder1.Visible = true
+		else
+			Open = false
+			ShadowHolder1.Visible = false
 		end
 	end)
 	
@@ -652,6 +649,7 @@ function RimusLib:MakeGui(GuiConfig)
 		TextButton.BackgroundTransparency = 0.9990000128746033
 		TextButton.BorderColor3 = Color3.fromRGB(0, 0, 0)
 		TextButton.BorderSizePixel = 0
+		TextButton.Position = UDim2.new(0, 1, 0, 0)
 		TextButton.Size = UDim2.new(1, 0, 1, 0)
 		TextButton.Parent = Tab1
 
@@ -685,7 +683,7 @@ function RimusLib:MakeGui(GuiConfig)
 			local OffsetY = 0
 			for _, child in pairs(LayersScroll:GetChildren()) do
 				if child.Name ~= "UIListLayout" then
-					OffsetY = OffsetY + 3 + child.Size.Y.Offset
+					OffsetY = OffsetY + 5 + child.Size.Y.Offset
 				end
 			end
 			LayersScroll.CanvasSize = UDim2.new(0, 0, 0, OffsetY)
@@ -693,7 +691,7 @@ function RimusLib:MakeGui(GuiConfig)
 		LayersScroll.ChildAdded:Connect(UpdateCanvaSize2)
 		LayersScroll.ChildRemoved:Connect(UpdateCanvaSize2)
 
-		UIListLayout1.Padding = UDim.new(0, 3)
+		UIListLayout1.Padding = UDim.new(0, 5)
 		UIListLayout1.SortOrder = Enum.SortOrder.LayoutOrder
 		UIListLayout1.Parent = LayersScroll
 
