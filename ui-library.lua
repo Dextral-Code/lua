@@ -828,6 +828,7 @@ function RimusLib:MakeGui(GuiConfig)
 				Title5.Text = tostring(ParagraphConfig.Title)
 				Content1.Text = tostring(ParagraphConfig.Content)
 			end
+			ParagraphFunc:Set(ParagraphConfig)
 			CountItem = CountItem + 1
 			return ParagraphFunc
 		end
@@ -1310,6 +1311,7 @@ function RimusLib:MakeGui(GuiConfig)
 			Slider.BackgroundColor3 = Color3.fromRGB(20.000000707805157, 20.000000707805157, 20.000000707805157)
 			Slider.BorderColor3 = Color3.fromRGB(0, 0, 0)
 			Slider.BorderSizePixel = 0
+			Slider.LayoutOrder = CountItem
 			Slider.Size = UDim2.new(1, 0, 0, 55)
 			Slider.Name = "Slider"
 			Slider.Parent = LayersScroll
@@ -1578,6 +1580,7 @@ function RimusLib:MakeGui(GuiConfig)
 			Button.BackgroundColor3 = Color3.fromRGB(20.000000707805157, 20.000000707805157, 20.000000707805157)
 			Button.BorderColor3 = Color3.fromRGB(0, 0, 0)
 			Button.BorderSizePixel = 0
+			Button.LayoutOrder = CountItem
 			Button.Size = UDim2.new(1, 0, 0, 55)
 			Button.Name = "Button"
 			Button.Parent = LayersScroll
