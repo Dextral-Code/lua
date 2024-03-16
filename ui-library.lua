@@ -134,7 +134,7 @@ function RimusLib:MakeNotify(Config)
 		local NotifyPosHeigh = 30
 		for i, v in pairs(CoreGui:GetChildren()) do
 			if v.Name == "RimusNotifyGui" then
-				if v:FindFirstChild("ShadowHolder1") then
+				if v:FindFirstChild("ShadowHolder1") and v.ShadowHolder1.Active then
 					NotifyPosHeigh = -(v.ShadowHolder1.Position.Y.Offset) + 95
 				end
 			end
@@ -169,6 +169,7 @@ function RimusLib:MakeNotify(Config)
 		ShadowHolder1.ZIndex = 0
 		ShadowHolder1.Name = "ShadowHolder1"
 		ShadowHolder1.Parent = RimusNotifyGui
+		ShadowHolder1.Active = true
 
 		ShadowImage1.Image = "rbxassetid://6015897843"
 		ShadowImage1.ImageColor3 = Color3.fromRGB(35.00000171363354, 160.00000566244125, 255)
@@ -301,7 +302,9 @@ function RimusLib:MakeNotify(Config)
 			TweenInfo.new(tonumber(NotifyConfig.Time), Enum.EasingStyle.Back, Enum.EasingDirection.InOut),
 			{Position = NotifyPosFirst}
 		):Play()
-		task.wait(tonumber(NotifyConfig.Time))
+		task.wait(tonumber(NotifyConfig.Time) / 2)
+		ShadowHolder1.Active = false
+		task.wait(tonumber(NotifyConfig.Time) / 2)
 		RimusNotifyGui:Destroy()
 	end)
 end
@@ -732,6 +735,7 @@ function RimusLib:MakeGui(GuiConfig)
 			Seperator.Size = UDim2.new(0, 200, 0, 18)
 			Seperator.Name = "Seperator"
 			Seperator.Parent = LayersScroll
+			Seperator.LayoutOrder = CountItem
 
 			CountItem = CountItem + 1
 			return SeperatorFunc
